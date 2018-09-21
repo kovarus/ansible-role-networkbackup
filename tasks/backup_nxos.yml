@@ -1,0 +1,7 @@
+---
+- name: 'Get Cisco NX-OS Configs'
+  nxos_command:
+    commands: show running
+  register: switch_response
+
+- include_tasks: cisco_dir.yml

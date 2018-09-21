@@ -1,0 +1,12 @@
+---
+- name: 'Enable NETCONF'
+  junos_netconf:
+    state: present
+  when: ansible_network_os == 'junos'
+
+- name: 'Get JUNOS Configs and Copy to Directory'
+  juniper_junos_command:
+    commands:
+      - show configuration
+    dest: "{{ backup_full_path }}"
+  when: ansible_network_os == 'junos'

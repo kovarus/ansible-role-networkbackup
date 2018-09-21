@@ -1,0 +1,3 @@
+---
+backup_dir: "{{ playbook_dir }}/switch_backups/{{ inventory_hostname }}/"
+backup_full_path: "{{ backup_dir }}{{ backup_filename }}"

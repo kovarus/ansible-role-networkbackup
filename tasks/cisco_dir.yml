@@ -1,0 +1,5 @@
+---
+- name: 'Copy Cisco IOS Configs to Directory'
+  copy:
+    content: "{{ switch_response.stdout[0] }}"
+    dest: "{{ backup_full_path }}"

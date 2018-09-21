@@ -1,0 +1,30 @@
+galaxy_info:
+  role_name: switchbackup
+  author: Kovarus #Taylor Owen towen@kovarus.com
+  description: Switch Backups
+  company: Kovarus, Inc.
+  license: (Apache)
+
+  min_ansible_version: 2.4
+  
+  platforms:
+    - name: IOS
+      versions:
+      - all
+    - name: NXOS
+      versions:
+      - all
+    - name: Junos
+      versions:
+      - all
+
+  galaxy_tags:
+    - cisco
+    - juniper
+    - junos
+    - ios
+    - nxos
+
+dependencies:
+  - src: juniper.junos
+    version: 2.1.0
