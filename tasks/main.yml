@@ -10,16 +10,19 @@
   set_fact:
     date: "{{ localhost_ansible_facts.ansible_facts.ansible_date_time.iso8601 }}"
   run_once: true
+  delegate_to: localhost
 
 - name: 'Set Backup File Name Variable'
   set_fact:
     backup_filename: "{{ ansible_network_os }}-config_{{ date }}"
   run_once: true
+  delegate_to: localhost
 
 - name: 'Ensure Backup Directories Exist'
   file:
     path: "{{ backup_dir }}"
     state: directory
+  delegate_to: localhost
 
 - name: 'Include Junos Backup Tasks'
   include_tasks: backup_junos.yml
