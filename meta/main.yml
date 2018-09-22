@@ -1,7 +1,7 @@
 galaxy_info:
   role_name: networkbackup
   author: Kovarus #Taylor Owen towen@kovarus.com
-  description: Switch Backups
+  description: Network Backups
   company: Kovarus, Inc.
   license: (Apache)
 
