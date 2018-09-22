@@ -1,5 +1,5 @@
 ---
-- hosts: switches
+- hosts: network_devices
   gather_facts: no
   roles:
-    - kovarus.switchbackup
+    - kovarus.networkbackup

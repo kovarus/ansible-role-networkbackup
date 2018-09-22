@@ -1,7 +1,7 @@
-switchbackup
+networkbackup
 =========
 
-This role is used to backup configurations of various switch platforms.
+This role is used to backup configurations of various network platforms.
 
 Requirements
 ------------
@@ -40,10 +40,10 @@ This role depends on the following roles:
 Example Playbook
 ----------------
     ---
-    - hosts: switches
+    - hosts: network_devices
       gather_facts: no
       roles:
-        - kovarus.switchbackup
+        - kovarus.networkbackup
 
 Platforms Supported
 -------------------
