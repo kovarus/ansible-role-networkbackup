@@ -15,8 +15,6 @@
 - name: 'Set Backup File Name Variable'
   set_fact:
     backup_filename: "{{ ansible_network_os }}-config_{{ date }}"
-  run_once: true
-  delegate_to: localhost
 
 - name: 'Ensure Backup Directories Exist'
   file:
