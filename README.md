@@ -11,6 +11,11 @@ The following python libraries are required for backing up Juniper devices:
  - junos-eznc
  - jxmlease
 
+The following python libraries are required for backing up Palo Alto Network devices:
+- pan-python
+- pandevice
+- xmltodict
+
 Role Variables
 --------------
 

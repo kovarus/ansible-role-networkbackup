@@ -1,0 +1,29 @@
+---
+- name: 'Get Palo Alto Network PAN-OS Configs'
+  panos_op:
+    ip_address: "{{ inventory_hostname }}"
+    username: "{{ ansible_user }}"
+    password: "{{ ansible_password }}"
+    cmd: show config running
+  register: panos_output
+  connection: local
+
+- name: 'Copy Palo Alto Network Configs to Directory'
+  copy:
+    content: "{{ panos_output.stdout_xml }}"
+    dest: "{{ backup_full_path }}"
+
+- name: 'Remove Response and Result Elements from Beginning of Palo Alto Network Config'
+  lineinfile:
+    path: "{{ backup_full_path }}"
+    regexp: '^<response status="success"><result><config(.*)$'
+    line: '<config\1'
+    backrefs: yes
+    state: present
+
+- name: 'Remove Response and Result Elements from end of Palo Alto Network Config'
+  lineinfile:
+    path: "{{ backup_full_path }}"
+    regexp: '^</config></result></response>$'
+    line: '</config>'
+    state: present

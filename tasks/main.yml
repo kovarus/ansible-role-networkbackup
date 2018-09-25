@@ -15,6 +15,7 @@
 - name: 'Set Backup File Name Variable'
   set_fact:
     backup_filename: "{{ ansible_network_os }}-config_{{ date }}"
+  delegate_to: localhost
 
 - name: 'Ensure Backup Directories Exist'
   file:
@@ -33,3 +34,7 @@
 - name: 'Include Cisco NX-OS Backup Tasks'
   include_tasks: backup_nxos.yml
   when: ansible_network_os == 'nxos'
+
+- name: 'Include Palo Alto Networks PAN-OS Backup Tasks'
+  include_tasks: backup_panos.yml
+  when: ansible_network_os == 'panos'
