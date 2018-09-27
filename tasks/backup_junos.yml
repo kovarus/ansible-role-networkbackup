@@ -3,6 +3,8 @@
   junos_netconf:
     state: present
   when: ansible_network_os == 'junos'
+  vars:
+    ansible_connection: local
 
 - name: 'Get JUNOS Configs and Copy to Directory'
   juniper_junos_command:
