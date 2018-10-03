@@ -17,6 +17,9 @@ galaxy_info:
     - name: Junos
       versions:
       - all
+    - name: EOS
+      versions:
+      - all
 
   galaxy_tags:
     - cisco
@@ -24,6 +27,8 @@ galaxy_info:
     - junos
     - ios
     - nxos
+    - eos
+    - arista
 
 dependencies:
   - src: juniper.junos

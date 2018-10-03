@@ -4,4 +4,4 @@
     commands: show running
   register: switch_response
 
-- include_tasks: cisco_dir.yml
+- include_tasks: backup_dir.yml
