@@ -38,3 +38,7 @@
 - name: 'Include Palo Alto Networks PAN-OS Backup Tasks'
   include_tasks: backup_panos.yml
   when: ansible_network_os == 'panos'
+
+- name: 'Include Arista EOS Backup Tasks'
+  include_tasks: backup_eos.yml
+  when: ansible_network_os == 'eos'

@@ -55,6 +55,7 @@ Platforms Supported
   - Cisco IOS
   - Cisco NX-OS
   - Juniper JUNOS
+  - Arista EOS
 
 License
 -------

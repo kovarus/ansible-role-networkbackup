@@ -1,0 +1,7 @@
+---
+- name: 'Get Arista EOS Configs'
+  eos_command:
+    commands: 'show running-config'
+  register: switch_response
+  
+- include_tasks: backup_dir.yml
